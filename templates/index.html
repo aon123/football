@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{{ url_for( 'static', filename='jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='jquery.dropotron.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='jquery.scrollgress.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='jquery.slidertron.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='skel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='skel-layers.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='init.js') }}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+		<link rel="stylesheet" href="{{ url_for('static', filename='skel.css') }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style-xlarge.css') }}"/>
+
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt skel-layers-fixed">
+				<h1><a href="/">Football Fan</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Football Match Simulator</h2>
+					<p>You can predict the results of match of your favourite team!</p>
+					<ul class="actions">
+						<li><a href="/" class="button big scrolly">Learn More</a></li>
+					</ul>
+				</div>
+			</section>
+			<div class="cont">
+					<h1 class="sometext">Predict Game</h1>
+					<div class="takeform">
+							<form method="GET">
+									<input name="text">
+									<input type="submit">
+									<input name="text1">				
+							</form>
+					</div>
+					<div>
+						<h1>{{home_win}}</h1>
+					</div>
+					<div class="cont1">
+							<canvas id="pie-chart" width="20" height="10"></canvas>
+							<script>
+								new Chart(document.getElementById("pie-chart"), {
+								type: 'pie',
+								data: {
+									  labels: ["Home Wins", "Draw Game", "Away Wins"],
+									  datasets: [{
+									label: "Population (millions)",
+										backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+									data: [10,30,40]
+									}]},
+								options: {
+									  title: {
+										display: true,
+										text: 'Predicted game outcome!'}} });
+			</script>
+					</div>
+					
+			</div>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<span class="copyright">
+					&copy; Copyright. All rights reserved.</a>
+				</span>
+			</footer>
+
+	</body>
+</html>

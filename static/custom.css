@@ -1,0 +1,39 @@
+.cont{
+    margin-top: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 1000px;
+    border-radius: 10px;
+    background: rgb(235, 235, 235);
+}
+
+.cont .sometext {
+    margin-top: 100px;
+    font-size: 40px;
+    text-align: center;
+
+}
+
+.cont .takeform{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 80px;
+
+}
+
+.somechart {
+    width: 800px;
+    height: 1200px;
+    box-sizing: border-box;
+}
+
+#pie-chart {
+    height: 400px;
+    width: 350px;
+    position: absolute;
+
+}
+
+.cont .cont1 {
+    margin-top: 200px;
+}
