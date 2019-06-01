@@ -56,4 +56,6 @@ def my_form_post():
             return render_template('index.html',home_win = home_win, draw_game = draw_game, away_win = away_win)
 
 
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
 
