@@ -33,9 +33,7 @@ def simulate_match(foot_model, homeTeam, awayTeam, max_goals=10):
     team_pred = [[poisson.pmf(i, team_avg) for i in range(0, max_goals+1)] for team_avg in [home_goals_avg, away_goals_avg]]
     return(np.outer(np.array(team_pred[0]), np.array(team_pred[1])))
 
-liv_sun = simulate_match(poisson_model, 'Liverpool','Chelsea', max_goals=10)
 
-a = str(np.sum(np.tril(liv_sun, -1)))
 
 
 @app.route('/')
@@ -45,15 +43,16 @@ def hello(name=None):
 
 @app.route('/', methods=['POST','GET'])
 def my_form_post():
-      if request.method == "GET":
-            liv = simulate_match(poisson_model, request.form['text'], request.form['text1'], max_goals=10)
-            home_win = str(np.sum(np.tril(liv_sun, -1)))
-            draw_game = str(np.sum(np.diag(liv_sun)))
-            away_win = str(np.sum(np.triu(liv_sun, 1)))
+      if request.method == "POST":
+            sim = simulate_match(poisson_model, request.form['text'], request.form['text1'], max_goals=10)
+            home_win = str(np.sum(np.tril(sim, -1)))
+            draw_game = str(np.sum(np.diag(sim)))
+            away_win = str(np.sum(np.triu(sim, 1)))
             print(home_win)
-            return render_template('chart.html', home_win = home_win, draw_game = draw_game, away_win = away_win)
+            return render_template('index.html', home_win = home_win, draw_game = draw_game, away_win = away_win)
       else:
-            return render_template('index.html',home_win = home_win, draw_game = draw_game, away_win = away_win)
+            print("error")
 
 
-
+if __name__ == '__main__':
+      app.run(host='0.0.0.0')

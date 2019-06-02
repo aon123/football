@@ -53,14 +53,13 @@
 			<div class="cont">
 					<h1 class="sometext">Predict Game</h1>
 					<div class="takeform">
-							<form method="GET">
+							<form method="POST">
 									<input name="text">
 									<input type="submit">
 									<input name="text1">				
 							</form>
 					</div>
 					<div>
-						<h1>{{home_win}}</h1>
 					</div>
 					<div class="cont1">
 							<canvas id="pie-chart" width="20" height="10"></canvas>
@@ -72,7 +71,7 @@
 									  datasets: [{
 									label: "Population (millions)",
 										backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-									data: [10,30,40]
+									data: [{{home_win}},{{draw_game}},{{away_win}}]
 									}]},
 								options: {
 									  title: {
