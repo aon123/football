@@ -1,14 +1,15 @@
 .cont{
-    margin-top: 200px;
+    
     margin-left: 200px;
+    padding: 4px;
     margin-right: 200px;
-    height: 1000px;
+    height: 900px;
     border-radius: 10px;
     background: rgb(235, 235, 235);
 }
 
 .cont .sometext {
-    margin-top: 100px;
+    margin-top: 20px;
     font-size: 40px;
     text-align: center;
 
@@ -16,8 +17,8 @@
 
 .cont .takeform{
     position: absolute;
-    margin-left: 500px;
-    margin-top: 80px;
+    margin-left: 600px;
+    margin-top: 10px;
 
 }
 
@@ -36,4 +37,48 @@
 
 .cont .cont1 {
     margin-top: 200px;
+}
+
+#slider {
+    width: 900px;
+    padding: 20px;
+    margin-left: 480px;
+    margin-right: 480px;
+    
+}
+
+.bord h1{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+#slider .someimg1 {
+    margin-top: 20px;
+}
+
+#slider .someimg2 {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.line {
+    height: 50px;
+    background: rgb(76, 48, 119);
+}
+
+.line1 {
+    height: 50px;
+    background: rgb(76, 48, 119);
+    margin-top: 200px;
+}
+
+.carusel {
+    margin-top: 100px;
+    margin-left: 330px;
+    margin-bottom: 100px; 
+    box-sizing: border-box;
+    border-radius: 500px;
+    width: 1200px;
 }

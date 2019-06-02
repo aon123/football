@@ -45,16 +45,14 @@ def hello(name=None):
 def my_form_post():
       if request.method == "POST":
             sim = simulate_match(poisson_model, request.form['text'], request.form['text1'], max_goals=10)
-            home_win = str(np.sum(np.tril(sim, -1)))
-            draw_game = str(np.sum(np.diag(sim)))
-            away_win = str(np.sum(np.triu(sim, 1)))
+            home_win = "{0:.2f}".format(np.sum(np.tril(sim, -1))*100)
+            draw_game = "{0:.2f}".format(np.sum(np.diag(sim))* 100)
+            away_win = "{0:.2f}".format(np.sum(np.triu(sim, 1))*100)
             print(home_win)
-            return render_template('index.html', home_win = home_win, draw_game = draw_game, away_win = away_win)
+            return render_template('index.html', home_win = home_win, draw_game = draw_game, away_win = away_win, home_team = request.form['text'], away_team = request.form['text1'])
       else:
             print("error")
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
 
-if __name__ == '__main__':
-      app.run(host='0.0.0.0')

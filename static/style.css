@@ -1248,7 +1248,7 @@
 			-o-transition: opacity 2s ease-in-out;
 			-ms-transition: opacity 2s ease-in-out;
 			transition: opacity 2s ease-in-out;
-			background: #3d4045;
+			background: #13161b;
 			content: '';
 			height: 100%;
 			left: 0;
@@ -1356,7 +1356,7 @@
 /* Footer */
 
 	#footer {
-		color: #949494;
+		color: #888585;
 		padding: 4em 0;
 		text-align: center;
 	}
