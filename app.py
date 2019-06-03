@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, url_for
 import pandas as pd
+import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import seaborn
 import numpy as np
