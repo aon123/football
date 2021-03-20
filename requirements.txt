@@ -3,7 +3,7 @@ Flask-Cors==3.0.7
 future==0.17.1
 html5lib==1.0.1
 jeepney==0.4
-Jinja2==2.10
+Jinja2==2.11.3
 jsonschema==2.6.0
 matplotlib==3.0.2
 mccabe==0.6.1
